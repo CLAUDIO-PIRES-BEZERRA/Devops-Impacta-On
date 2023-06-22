@@ -105,7 +105,11 @@ jobs:
 
   deploy-test:
     runs-on: ubuntu-latest
-
+    
+    environment:
+      name: tst
+    needs: build
+    
     steps:
       - name: Deploy 
         shell: bash
