@@ -78,6 +78,18 @@ jobs:
         #From this path
         path: ./target/demo-0.0.2.7-SNAPSHOT.jar 
           
+  deploy-PRE-STG:
+    runs-on: ubuntu-latest
+    environment:
+      name: pre-stg
+    needs: build
+    
+    steps:
+      - name: Deploy 
+        shell: bash
+        run: |
+          echo "Deploy PRE-STG"
+          
   deploy-STG:
     runs-on: ubuntu-latest
     environment:
